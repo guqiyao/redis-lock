@@ -1,4 +1,4 @@
-package cn.soul.lock;
+package io.github.guqiyao;
 
 /**
  * @Author: qiyao.gu

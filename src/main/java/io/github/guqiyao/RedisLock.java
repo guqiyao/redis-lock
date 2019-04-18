@@ -1,4 +1,4 @@
-package cn.soul.lock;
+package io.github.guqiyao;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;

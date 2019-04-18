@@ -1,7 +1,7 @@
-package cn.soul.lock.spring.boot;
+package io.github.guqiyao.spring.boot;
 
-import cn.soul.lock.RedisLockOperation;
-import cn.soul.lock.ReentrantRedisLock;
+import io.github.guqiyao.RedisLockOperation;
+import io.github.guqiyao.ReentrantRedisLock;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

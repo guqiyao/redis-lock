@@ -1,6 +1,6 @@
-package cn.soul.lock.spring;
+package io.github.guqiyao.spring;
 
-import cn.soul.lock.RedisLockOperation;
+import io.github.guqiyao.RedisLockOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -1,4 +1,4 @@
-package cn.soul.lock;
+package io.github.guqiyao;
 
 import java.util.Map;
 import java.util.Objects;
