@@ -6,7 +6,7 @@ import java.util.concurrent.locks.Lock;
 
 /**
  * @Author: qiyao.gu
- * @Eamil: qiyao.gu@nalaa.com
+ * @Eamil: 125307126@qq.com
  * @Date: 2019/4/1 16:00
  */
 public class LockWrapper {

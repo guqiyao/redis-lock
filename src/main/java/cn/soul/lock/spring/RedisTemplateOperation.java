@@ -8,7 +8,7 @@ import redis.clients.jedis.Jedis;
 
 /**
  * @Author: qiyao.gu
- * @Eamil: qiyao.gu@nalaa.com
+ * @Eamil: 125307126@qq.com
  * @Date: 2019/4/2 17:08
  */
 public class RedisTemplateOperation<K, V> implements RedisLockOperation {

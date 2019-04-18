@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @Author: qiyao.gu
- * @Eamil: qiyao.gu@nalaa.com
+ * @Eamil: 125307126@qq.com
  * @Date: 4/18/2019 5:41 PM
  */
 @Configuration

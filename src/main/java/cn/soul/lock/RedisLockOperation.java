@@ -2,7 +2,7 @@ package cn.soul.lock;
 
 /**
  * @Author: qiyao.gu
- * @Eamil: qiyao.gu@nalaa.com
+ * @Eamil: 125307126@qq.com
  * @Date: 2019/4/2 17:05
  */
 public interface RedisLockOperation {
