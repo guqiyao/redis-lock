@@ -13,8 +13,6 @@ import redis.clients.jedis.Jedis;
  */
 public class RedisTemplateOperation<K, V> implements RedisLockOperation {
 
-    private static final int DEFAULT_EXPIRE_SECOND = 30;
-
     private RedisTemplate<K, V> redisTemplate;
 
     public RedisTemplateOperation(RedisTemplate<K, V> redisTemplate) {
@@ -23,7 +21,7 @@ public class RedisTemplateOperation<K, V> implements RedisLockOperation {
 
     @Override
     public boolean lock(String key) {
-        return lock(key, DEFAULT_EXPIRE_SECOND);
+        return lock(key, RedisLockOperation.DEFAULT_EXPIRE_SECOND);
     }
 
     @Override

@@ -7,6 +7,8 @@ package io.github.guqiyao;
  */
 public interface RedisLockOperation {
 
+    int DEFAULT_EXPIRE_SECOND = 30;
+
     /**
      * 加锁(默认过期时间30秒)
      * @param key   key
