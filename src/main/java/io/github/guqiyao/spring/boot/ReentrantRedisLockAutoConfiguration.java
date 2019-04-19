@@ -12,10 +12,10 @@ import org.springframework.context.annotation.Configuration;
  * @Date: 4/18/2019 5:41 PM
  */
 @Configuration
-@ConditionalOnBean(value = RedisLockOperation.class)
 public class ReentrantRedisLockAutoConfiguration {
 
     @Bean
+    @ConditionalOnBean(value = RedisLockOperation.class)
     public ReentrantRedisLock reentrantRedisLock(RedisLockOperation redisLockOperation) {
         return new ReentrantRedisLock(redisLockOperation);
     }
