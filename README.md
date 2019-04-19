@@ -1,7 +1,20 @@
 # redis-lock
 基于Redis并简单实现了java.util.concurrent.locks.Lock接口的Lock
 
-## 使用方式
+当前版本: 1.0.0-SNAPSHOT
+
+## get it
+### Maven
+
+```
+    <dependency>
+        <groupId>io.github.guqiyao</groupId>
+        <artifactId>redis-lock</artifactId>
+        <version>${version}</version>
+    </dependency>
+```
+
+## 使用
 ### spring boot
 #### RedisTemplate(目前只支持RedisTemplate的封装)
 
