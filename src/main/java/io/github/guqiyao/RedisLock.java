@@ -1,5 +1,6 @@
 package io.github.guqiyao;
 
+import javax.annotation.Nonnull;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
@@ -58,7 +59,7 @@ public class RedisLock implements Lock {
     }
 
     @Override
-    public boolean tryLock(long time, TimeUnit unit) {
+    public boolean tryLock(long time, @Nonnull TimeUnit unit) {
         if (isReentrant()) {
             return true;
         }
@@ -99,6 +100,7 @@ public class RedisLock implements Lock {
         throw new UnsupportedOperationException();
     }
 
+    @Nonnull
     @Override
     public Condition newCondition() {
         throw new UnsupportedOperationException();
