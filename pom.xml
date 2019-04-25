@@ -6,7 +6,7 @@
 
     <groupId>io.github.guqiyao</groupId>
     <artifactId>redis-lock</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -16,9 +16,13 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>snapshots</id>
+            <id>mvnrepository</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
+        <repository>
+            <id>mvnrepository</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 
     <dependencies>
@@ -54,6 +58,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
         </dependency>
 
     </dependencies>
