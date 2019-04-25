@@ -18,7 +18,7 @@ public class ReentrantRedisLock {
 
     private final Cache<String, RedisLock> cache = CacheBuilder.newBuilder()
             .maximumSize(100L)
-            .expireAfterAccess(180000L, TimeUnit.MILLISECONDS)
+            .expireAfterAccess(60L, TimeUnit.SECONDS)
             .build();
 
     private RedisLockOperation redisLockOperation;
