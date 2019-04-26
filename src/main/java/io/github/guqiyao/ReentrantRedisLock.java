@@ -14,8 +14,6 @@ import java.util.concurrent.locks.Lock;
  */
 public class ReentrantRedisLock {
 
-    private static final int DEFAULT_LOCKED_TIME = 30;
-
     private final Cache<String, RedisLock> cache = CacheBuilder.newBuilder()
             .maximumSize(100L)
             .expireAfterAccess(60L, TimeUnit.SECONDS)
@@ -25,10 +23,6 @@ public class ReentrantRedisLock {
 
     public ReentrantRedisLock(RedisLockOperation redisLockOperation) {
         this.redisLockOperation = redisLockOperation;
-    }
-
-    public Lock getLock(String key) {
-        return getLock(key, DEFAULT_LOCKED_TIME);
     }
 
     public Lock getLock(String key, int lockedTime) {
