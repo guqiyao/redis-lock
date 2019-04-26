@@ -1,7 +1,7 @@
 # redis-lock
 基于Redis并简单实现了java.util.concurrent.locks.Lock接口的Lock
 
-当前版本: 1.0.1-SNAPSHOT
+当前版本: 1.0.2
 
 ## get it
 ### Maven
@@ -43,20 +43,7 @@
         @Autowired
         private ReentrantRedisLock reentrantRedisLock;
         
-        public void use() {
-            String key = "test_ley";
-            //未指定过期时间默认是30秒过期
-            Lock lock = reentrantRedisLock.getLock(key);
-            
-            try {
-                lock.lock();
-                //TODO
-            } finally {
-                lock.unlock();
-            }
-        }
-        
-        public  void useWithExpireTime() {
+        public  void use() {
             String key = "test_ley";
             //指定过期时间为10秒
             Lock lock = reentrantRedisLock.getLock(key, 10);
