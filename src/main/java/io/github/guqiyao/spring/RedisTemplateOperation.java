@@ -20,11 +20,6 @@ public class RedisTemplateOperation<K, V> implements RedisLockOperation {
     }
 
     @Override
-    public boolean lock(String key) {
-        return lock(key, RedisLockOperation.DEFAULT_EXPIRE_SECOND);
-    }
-
-    @Override
     public boolean lock(String key, int expire) {
         String result = redisTemplate.execute((RedisCallback<String>) connection -> {
             Jedis jedis = (Jedis) connection.getNativeConnection();

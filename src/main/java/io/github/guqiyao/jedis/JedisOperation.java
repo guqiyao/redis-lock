@@ -21,11 +21,6 @@ public class JedisOperation implements RedisLockOperation {
     }
 
     @Override
-    public boolean lock(String key) {
-        return lock(key, RedisLockOperation.DEFAULT_EXPIRE_SECOND);
-    }
-
-    @Override
     public boolean lock(String key, int expire) {
         String result = executeCallback(jedis -> jedis.set(key, "write operation", "NX", "EX", expire));
 

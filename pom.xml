@@ -6,10 +6,10 @@
 
     <groupId>io.github.guqiyao</groupId>
     <artifactId>redis-lock</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <name>redis-lock</name>
-    <description>基于redis的分布式锁封装库</description>
+    <description>基于redis的分布式锁封装</description>
     <url>https://github.com/guqiyao/redis-lock</url>
 
     <licenses>
