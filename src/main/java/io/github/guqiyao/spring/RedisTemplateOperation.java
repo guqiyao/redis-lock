@@ -2,8 +2,10 @@ package io.github.guqiyao.spring;
 
 import io.github.guqiyao.RedisLockOperation;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.redis.connection.RedisStringCommands;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.types.Expiration;
 import redis.clients.jedis.Jedis;
 
 /**
@@ -21,23 +23,22 @@ public class RedisTemplateOperation<K, V> implements RedisLockOperation {
 
     @Override
     public boolean lock(String key, int expire) {
-        String result = redisTemplate.execute((RedisCallback<String>) connection -> {
-            Jedis jedis = (Jedis) connection.getNativeConnection();
-            return jedis.set(key, "write operation", "NX", "EX", expire);
-        });
 
-        return StringUtils.isNotBlank(result);
+        Boolean result = redisTemplate.execute(
+                (RedisCallback<Boolean>) connection ->
+                        connection.set(
+                                key.getBytes(),
+                                "write operation".getBytes(),
+                                Expiration.seconds(expire),
+                                RedisStringCommands.SetOption.ifAbsent()
+                        )
+        );
+
+        return result;
     }
 
     @Override
     public void unlock(String key) {
-        redisTemplate.execute((RedisCallback<String>) connection -> {
-            Jedis jedis = (Jedis) connection.getNativeConnection();
-
-            jedis.del(key);
-
-            return null;
-        });
+        redisTemplate.execute((RedisCallback<Long>) connection -> connection.del(key.getBytes()));
     }
-
 }
